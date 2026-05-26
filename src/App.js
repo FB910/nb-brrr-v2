@@ -358,7 +358,7 @@ export default function App() {
   const [annualGrowthRate,setAnnualGrowthRate]= useState(3);
 
   // Calculations
-  const calcSDLT = p => p<=250000?p*0.03:p<=925000?250000*0.03+(p-250000)*0.08:250000*0.03+675000*0.08+(p-925000)*0.13;
+  const calcSDLT = p => p<=250000?p*0.05:p<=925000?250000*0.05+(p-250000)*0.08:250000*0.05+675000*0.08+(p-925000)*0.13;
   const sdlt             = calcSDLT(purchasePrice);
   const purchaseDeposit  = purchasePrice*(1-purchaseLTV/100);
   const purchaseMortgage = purchasePrice*(purchaseLTV/100);
@@ -502,7 +502,7 @@ export default function App() {
           <Slider label="Legal Costs"     value={legalCosts}     setValue={setLegalCosts}     min={1500}  max={5000}   step={250}    prefix="£"/>
           <Slider label="Survey Fee"      value={surveyFee}      setValue={setSurveyFee}      min={0}     max={1500}   step={50}     prefix="£"  hint="Set to £0 if waiving survey"/>
           <div style={{background:"rgba(201,169,110,0.06)",border:`1px solid ${BRAND.border}`,borderRadius:"10px",padding:"0.85rem 1rem",marginBottom:"1.5rem"}}>
-            <div style={{fontSize:"0.62rem",color:BRAND.textDim,fontFamily:"'Space Mono',monospace",textTransform:"uppercase",letterSpacing:"0.08em",marginBottom:"0.3rem"}}>SDLT — Ltd Co. 3% Surcharge</div>
+            <div style={{fontSize:"0.62rem",color:BRAND.textDim,fontFamily:"'Space Mono',monospace",textTransform:"uppercase",letterSpacing:"0.08em",marginBottom:"0.3rem"}}>SDLT — Ltd Co. 5% Surcharge</div>
             <div style={{fontSize:"1.1rem",color:BRAND.gold,fontWeight:700,fontFamily:"'Space Mono',monospace"}}>{fmt(sdlt)}</div>
           </div>
 

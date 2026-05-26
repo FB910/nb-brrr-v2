@@ -358,7 +358,7 @@ export default function App() {
   const [annualGrowthRate,setAnnualGrowthRate]= useState(3);
 
   // Calculations
-  const calcSDLT = p => p<=250000?p*0.05:p<=925000?250000*0.05+(p-250000)*0.08:250000*0.05+675000*0.08+(p-925000)*0.13;
+  const calcSDLT = p => p<=250000?p*0.05:p<=925000?250000*0.05+(p-250000)*0.10:p<=1500000?250000*0.05+675000*0.10+(p-925000)*0.15:250000*0.05+675000*0.10+575000*0.15+(p-1500000)*0.17;
   const sdlt             = calcSDLT(purchasePrice);
   const purchaseDeposit  = purchasePrice*(1-purchaseLTV/100);
   const purchaseMortgage = purchasePrice*(purchaseLTV/100);
@@ -586,7 +586,7 @@ export default function App() {
           <SecHead title="Capital Stack"/>
           <div style={{background:BRAND.bgCard,border:`1px solid ${BRAND.borderFaint}`,borderRadius:"12px",padding:"1rem 1.1rem",marginBottom:"0.5rem"}}>
             <Row label="Purchase Deposit"         value={fmt(purchaseDeposit)}/>
-            <Row label="SDLT (Ltd Co.)"           value={fmt(sdlt)}/>
+            <Row label="SDLT (Ltd Co. 5%-17%)"           value={fmt(sdlt)}/>
             <Row label="Legal Costs"              value={fmt(legalCosts)}/>
             {surveyFee>0&&<Row label="Survey Fee" value={fmt(surveyFee)}/>}
             <Row label="Refurb Budget"            value={fmt(refurbCost)}/>

@@ -226,7 +226,7 @@ function buildPDFHTML(data) {
       <h2>Capital Stack</h2>
       <table>
         ${pRow("Purchase Deposit",fmt(purchaseDeposit))}
-        ${pRow("SDLT (Ltd Co. 3%)",fmt(sdlt))}
+        ${pRow("SDLT (Ltd Co. 5%-17%)",fmt(sdlt))}
         ${pRow("Legal Costs",fmt(legalCosts))}
         ${surveyFee>0?pRow("Survey Fee",fmt(surveyFee)):""}
         ${pRow("Refurb Budget",fmt(refurbCost))}
